@@ -1,7 +1,7 @@
 const { Client, Intents, MessageEmbed } = require("discord.js");
 const cron = require("node-cron");
 
-const botToken = "OTkyMDQ0NTA4MzYxNTM1NTY4.GbTpUA.PF7thwg7iTusS3Vus85FizgtQ19B6cppxAtBhA";
+const botToken = process.env.DISCORD_TOKEN;
 
 const client = new Client({
   intents: [Intents.FLAGS.GUILDS, Intents.FLAGS.GUILD_MESSAGES],
