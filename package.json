@@ -12,6 +12,7 @@
   "dependencies": {
     "discord-command-parser": "^1.5.3",
     "discord.js": "^13.8.1",
+    "dotenv": "^16.0.1",
     "node-cron": "^3.0.1",
     "uuid": "^8.3.2"
   }

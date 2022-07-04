@@ -1,6 +1,7 @@
 const { Client, Intents, MessageEmbed } = require("discord.js");
 const cron = require("node-cron");
-
+const dotenv = require('dotenv');
+dotenv.config();
 const botToken = process.env.DISCORD_TOKEN;
 
 const client = new Client({
@@ -20,7 +21,7 @@ const eventJson = [
 
   // Shadow lottery
   {
-    cron: "0 12 * * 1-6",
+    cron: "0 12 * * 1,2,3,4,5,6",
     msg: {
       title: "Лотерея тіней",
       desc: "Лотерея тіней почалася!",
@@ -28,7 +29,7 @@ const eventJson = [
     },
   },
   {
-    cron: "0 18 * * 1-6",
+    cron: "0 18 * * 1,2,3,4,5,6",
     msg: {
       title: "Лотерея тіней",
       desc: "Лотерея тіней почалася!",
@@ -36,7 +37,7 @@ const eventJson = [
     },
   },
   {
-    cron: "0 21 * * 1-6",
+    cron: "0 21 * * 1,2,3,4,5,6",
     msg: {
       title: "Лотерея тіней",
       desc: "Лотерея тіней почалася!",
@@ -46,7 +47,7 @@ const eventJson = [
 
   // Shadow contracts
   {
-    cron: "0 3 * * 1-6",
+    cron: "0 3 * * 1,2,3,4,5,6",
     msg: {
       title: "Контракт тіней",
       desc: "1 контракт тіней знов готовий до виконання у бармена!",
@@ -64,7 +65,7 @@ const eventJson = [
 
   // Vault raid
   {
-    cron: "0 12 * * 1-7",
+    cron: "0 12 * * 1,2,3,4,5,6,7",
     msg: {
       title: "Пограбування скарбниці",
       desc: "Скарбниця безсмертних відкрита. Треба в них натирити голди.",
@@ -72,7 +73,7 @@ const eventJson = [
     },
   },
   {
-    cron: "0 19 * * 1-7",
+    cron: "0 19 * * 1,2,3,4,5,6,7",
     msg: {
       title: "Пограбування скарбниці",
       desc: "Скарбниця безсмертних відкрита. Треба в них натирити голди.",
@@ -82,7 +83,7 @@ const eventJson = [
 
   // Shadow assembly
   {
-    cron: "0 18 * * 1-6",
+    cron: "0 18 * * 1,2,3,4,5,6",
     msg: {
       title: "Зібрання тіней",
       desc: "Зібрання тіней почалося. Отримайте 4 благословення Акіми",
@@ -160,7 +161,7 @@ const eventJson = [
 
   // Battlegrounds
   {
-    cron: "0 8 * * 1-7",
+    cron: "0 8 * * 1,2,3,4,5,6,7",
     msg: {
       title: "Поле битви",
       desc: "Поле битви стартувало. За перші 3 бої в день на тебе чекають нагороди.",
@@ -168,7 +169,7 @@ const eventJson = [
     },
   },
   {
-    cron: "0 12 * * 1-7",
+    cron: "0 12 * * 1,2,3,4,5,6,7",
     msg: {
       title: "Поле битви",
       desc: "Поле битви стартувало. За перші 3 бої в день на тебе чекають нагороди.",
@@ -176,7 +177,7 @@ const eventJson = [
     },
   },
   {
-    cron: "0 18 * * 1-7",
+    cron: "0 18 * * 1,2,3,4,5,6,7",
     msg: {
       title: "Поле битви",
       desc: "Поле битви стартувало. За перші 3 бої в день на тебе чекають нагороди.",
@@ -184,7 +185,7 @@ const eventJson = [
     },
   },
   {
-    cron: "0 22 * * 1-7",
+    cron: "0 22 * * 1,2,3,4,5,6,7",
     msg: {
       title: "Поле битви",
       desc: "Поле битви стартувало. За перші 3 бої в день на тебе чекають нагороди.",
@@ -316,6 +317,7 @@ const eventJson = [
 client.on("ready", async () => {
   console.log(`Logged in as ${client.user.tag}!`);
   let channel = client.channels.cache.get(`992052955496841316`);
+  let channel_1 = client.channels.cache.get(`984761377463889930`);
 
   for (const event of eventJson) {
     console.log(`Scheduling for event ${event?.msg?.title}`);
@@ -331,7 +333,18 @@ client.on("ready", async () => {
           console.log(
             `Sending notification for event ${event?.title} and cron ${event?.cron}`
           );
-          channel.send({ content: "@BTRco", embeds: [embed] });
+          channel.send({ content: "Нагадування", embeds: [embed] });
+        }
+	 if (channel_1) {
+          const embed = new MessageEmbed()
+            .setColor(event?.msg?.color || "#FF0000")
+            .setTitle(event?.msg?.title || "Default Title")
+            .setTimestamp()
+            .setDescription(event?.msg?.desc || "Default Description");
+          console.log(
+            `Sending notification for event ${event?.title} and cron ${event?.cron}`
+          );
+          channel_1.send({ content: "Нагадування", embeds: [embed] });
         }
       },
       {
@@ -362,7 +375,7 @@ client.on("ready", async () => {
     };
 
     console.log(memoryUsage);
-  }, 1000 * 60);
+  }, 1000 * 600);
 });
 
 client.login(botToken);
