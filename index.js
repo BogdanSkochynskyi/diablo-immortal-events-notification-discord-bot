@@ -330,7 +330,7 @@ client.on("ready", async () => {
             .setTimestamp()
             .setDescription(event?.msg?.desc || "Default Description");
           console.log(
-            `Sending notification for event ${event?.title} and cron ${event?.cron}`
+            `Sending notification for event ${event.title} and cron ${event?.cron}`
           );
           channel.send({ content: "Нагадування", embeds: [embed] });
         }
