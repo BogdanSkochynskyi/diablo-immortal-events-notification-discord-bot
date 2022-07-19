@@ -96,15 +96,6 @@ const eventJson = [
       color: "#A652BB",
     },
   },
-  //Corvus expedition
-  {
-    cron: "0 20 * * 1,3,5",
-    msg: {
-      title: "Експедиція Корвус",
-      desc: "Експедиція Корвус почалась.",
-      color: "#A652BB",
-    },
-  },
 
   // Shadow assembly
   // {
