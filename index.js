@@ -98,7 +98,7 @@ const eventJson = [
   },
   //Corvus expedition
   {
-    cron: "0 21 * * 1,3,5",
+    cron: "0 18 * * 5,6,7",
     msg: {
       title: "Експедиція Корвус",
       desc: "Експедиція Корвус почалась.",
