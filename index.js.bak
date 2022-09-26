@@ -328,7 +328,7 @@ const eventJson = [
 
 client.on("ready", async () => {
   console.log(`Logged in as ${client.user.tag}!`);
-  let channel = client.channels.cache.get(`984761377463889930`);
+  let channel = client.channels.cache.get(`1023611061229862953`);
 
   for (const event of eventJson) {
     console.log(`Scheduling for event ${event?.msg?.title}`);
@@ -345,33 +345,6 @@ client.on("ready", async () => {
             `Sending notification for event ${event.title} and cron ${event?.cron}`
           );
           channel.send({ content: "Нагадування", embeds: [embed] });
-        }
-      },
-      {
-        scheduled: true,
-        timezone: "Europe/Paris",
-      }
-    );
-  }
-  console.log("Scheduled all events");
-  
-  let channel1 = client.channels.cache.get(`1023611061229862953`);
-
-  for (const event of eventJson) {
-    console.log(`Scheduling for event ${event?.msg?.title}`);
-    cron.schedule(
-      event.cron,
-      () => {
-        if (channel1) {
-          const embed = new MessageEmbed()
-            .setColor(event?.msg?.color || "#FF0000")
-            .setTitle(event?.msg?.title || "Default Title")
-            .setTimestamp()
-            .setDescription(event?.msg?.desc || "Default Description");
-          console.log(
-            `Sending notification for event ${event.title} and cron ${event?.cron}`
-          );
-          channel1.send({ content: "Нагадування", embeds: [embed] });
         }
       },
       {
