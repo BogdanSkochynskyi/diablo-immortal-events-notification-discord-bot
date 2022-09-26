@@ -8,6 +8,9 @@ const client = new Client({
   intents: [Intents.FLAGS.GUILDS, Intents.FLAGS.GUILD_MESSAGES],
 });
 
+//6495ED - general events
+//008000 - shadows events
+//B8860B - immortals events
 const eventJson = [
   // Daily reset
   {
@@ -15,7 +18,7 @@ const eventJson = [
     msg: {
       title: "Новий день!",
       desc: "Новий день на сервері. Можна знов робити дейлікі.",
-      color: "#FD0061",
+      color: "#6495ED",
     },
   },
 
@@ -25,7 +28,7 @@ const eventJson = [
     msg: {
       title: "Лотерея тіней",
       desc: "Лотерея тіней почалася!",
-      color: "#A652BB",
+      color: "#008000",
     },
   },
   {
@@ -33,7 +36,7 @@ const eventJson = [
     msg: {
       title: "Лотерея тіней",
       desc: "Лотерея тіней почалася!",
-      color: "#A652BB",
+      color: "#008000",
     },
   },
   {
@@ -41,7 +44,7 @@ const eventJson = [
     msg: {
       title: "Лотерея тіней",
       desc: "Лотерея тіней почалася!",
-      color: "#A652BB",
+      color: "#008000",
     },
   },
 
@@ -51,7 +54,7 @@ const eventJson = [
      msg: {
        title: "Контракт тіней",
        desc: "1 контракт тіней знов готовий до виконання у бармена!",
-       color: "#A652BB",
+       color: "#008000",
      },
    },
    {
@@ -59,7 +62,7 @@ const eventJson = [
      msg: {
        title: "Контракт тіней",
        desc: "3 контракти тіней знов готові до виконання у бармена!",
-       color: "#A652BB",
+       color: "#008000",
      },
    },
 
@@ -69,7 +72,7 @@ const eventJson = [
     msg: {
       title: "Пограбування скарбниці",
       desc: "Через 5 хвилин пограбування! Підготуйтесь!",
-      color: "#A652BB",
+      color: "#6495ED",
     },
   },
   {
@@ -77,34 +80,34 @@ const eventJson = [
     msg: {
      title: "Пограбування скарбниці",
       desc: "Через 5 хвилин пограбування! Підготуйтесь!",
-      color: "#A652BB",
+      color: "#6495ED",
     },
   },
   {
     cron: "0 12 * * 1,2,3,4,5,6,7",
     msg: {
       title: "Пограбування скарбниці",
-      desc: "Треба пограбувати скарбницю!",
-      color: "#A652BB",
+      desc: "Пограбування скарбниці почалося!",
+      color: "#6495ED",
     },
   },
   {
     cron: "0 19 * * 1,2,3,4,5,6,7",
     msg: {
       title: "Пограбування скарбниці",
-      desc: "Треба пограбувати скарбницю!",
-      color: "#A652BB",
+      desc: "Пограбування скарбниці почалося!",
+      color: "#6495ED",
     },
   },
   //Corvus expedition
-  /* {
-    cron: "0 18 * * 5,6,7",
-    msg: {
-      title: "Експедиція Корвус",
-      desc: "Експедиція Корвус почалась.",
-      color: "#A652BB",
-    },
-  }, */
+   // {
+    // cron: "0 18 * * 5,6,7",
+    // msg: {
+      // title: "Експедиція Корвус",
+      // desc: "Експедиція Корвус почалась.",
+      // color: "#B8860B",
+    // },
+  // }, 
 
   // Shadow assembly
    {
@@ -112,7 +115,7 @@ const eventJson = [
      msg: {
        title: "Зібрання тіней",
        desc: "Зібрання тіней почалося. Отримайте 4 благословення Акіми",
-       color: "#A652BB",
+       color: "#008000",
      },
    },
 
@@ -122,7 +125,7 @@ const eventJson = [
      msg: {
        title: "Обряд Вигнанців",
        desc: "Обряд Вигнанців через 15 хв.",
-       color: "#A652BB",
+       color: "#6495ED",
      },
    },
    {
@@ -130,7 +133,7 @@ const eventJson = [
      msg: {
        title: "Обряд Вигнанців",
        desc: "Обряд Вигнанців через 10 хв.",
-       color: "#A652BB",
+       color: "#6495ED",
      },
    },
    {
@@ -138,7 +141,7 @@ const eventJson = [
      msg: {
        title: "Обряд Вигнанців",
        desc: "Обряд Вигнанців через 5 хв.",
-       color: "#A652BB",
+       color: "#6495ED",
      },
    },
    {
@@ -146,25 +149,17 @@ const eventJson = [
      msg: {
        title: "Обряд Вигнанців",
        desc: "Обряд Вигнанців стартував. Гуд лак бойз!",
-       color: "#A652BB",
+       color: "#6495ED",
      },
    },
 
   // Shadow War
    {
-     cron: "45 18 * * 4,6",
-     msg: {
-       title: "Битва тіней",
-       desc: "Битва тіней через 15 хв.",
-       color: "#A652BB",
-     },
-   },
-   {
      cron: "50 18 * * 4,6",
      msg: {
        title: "Битва тіней",
        desc: "Битва тіней через 10 хв.",
-       color: "#A652BB",
+       color: "#008000",
      },
    },
    {
@@ -172,7 +167,7 @@ const eventJson = [
      msg: {
        title: "Битва тіней",
        desc: "Битва тіней через 5 хв.",
-       color: "#A652BB",
+       color: "#008000",
      },
    },
    {
@@ -180,7 +175,7 @@ const eventJson = [
      msg: {
        title: "Битва тіней",
        desc: "Битва тіней стартувала. Гуд лак бойз!",
-       color: "#A652BB",
+       color: "#008000",
      },
    },
 
@@ -190,7 +185,7 @@ const eventJson = [
     msg: {
       title: "Поле битви",
       desc: "Поле битви стартувало. За перші 3 бої в день на тебе чекають нагороди.",
-      color: "#F8C300",
+      color: "#6495ED",
     },
   },
   {
@@ -198,7 +193,7 @@ const eventJson = [
     msg: {
       title: "Поле битви",
       desc: "Поле битви стартувало. За перші 3 бої в день на тебе чекають нагороди.",
-      color: "#F8C300",
+      color: "#6495ED",
     },
   },
   {
@@ -206,7 +201,7 @@ const eventJson = [
     msg: {
       title: "Поле битви",
       desc: "Поле битви стартувало. За перші 3 бої в день на тебе чекають нагороди.",
-      color: "#F8C300",
+      color: "#6495ED",
     },
   },
   {
@@ -214,7 +209,7 @@ const eventJson = [
     msg: {
       title: "Поле битви",
       desc: "Поле битви стартувало. За перші 3 бої в день на тебе чекають нагороди.",
-      color: "#F8C300",
+      color: "#6495ED",
     },
   },
 
@@ -226,7 +221,7 @@ const eventJson = [
     msg: {
       title: "Примарний диліжанс",
       desc: "Примарний диліжанс стартує за 5 хв. на Ешвольдському цвинтарі",
-      color: "#00D166",
+      color: "#20B2AA",
     },
   },
   {
@@ -234,7 +229,7 @@ const eventJson = [
     msg: {
       title: "Примарний диліжанс",
       desc: "Примарний диліжанс стартував. на Ешвольдському цвинтарі",
-      color: "#00D166",
+      color: "#20B2AA",
     },
   },
   {
@@ -242,7 +237,7 @@ const eventJson = [
     msg: {
       title: "Примарний диліжанс",
       desc: "Примарний диліжанс стартує за 5 хв. на Ешвольдському цвинтарі",
-      color: "#00D166",
+      color: "#20B2AA",
     },
   },
   {
@@ -250,7 +245,7 @@ const eventJson = [
     msg: {
       title: "Примарний диліжанс",
       desc: "Примарний диліжанс стартував. на Ешвольдському цвинтарі",
-      color: "#00D166",
+      color: "#20B2AA",
     },
   },
   {
@@ -258,7 +253,7 @@ const eventJson = [
     msg: {
       title: "Примарний диліжанс",
       desc: "Примарний диліжанс стартує за 5 хв. на Ешвольдському цвинтарі",
-      color: "#00D166",
+      color: "#20B2AA",
     },
   },
   {
@@ -266,7 +261,7 @@ const eventJson = [
     msg: {
       title: "Примарний диліжанс",
       desc: "Примарний диліжанс стартував. на Ешвольдському цвинтарі",
-      color: "#00D166",
+      color: "#20B2AA",
     },
   },
 
@@ -276,7 +271,7 @@ const eventJson = [
     msg: {
       title: "Стародавня арена",
       desc: "Стародавня арена стартує через 5 хв. на загиблому острові",
-      color: "#00D166",
+      color: "#66CDAA",
     },
   },
   {
@@ -284,7 +279,7 @@ const eventJson = [
     msg: {
       title: "Стародавня арена",
       desc: "Стародавня арена стартувала на загиблому острові",
-      color: "#00D166",
+      color: "#66CDAA",
     },
   },
 
@@ -294,7 +289,7 @@ const eventJson = [
     msg: {
       title: "Стародавній кошмар",
       desc: "Стародавній кошмар стартує через 5 хв. Пік Завейн",
-      color: "#00D166",
+      color: "#800000",
     },
   },
   {
@@ -302,7 +297,7 @@ const eventJson = [
     msg: {
       title: "Стародавній кошмар",
       desc: "Стародавній кошмар стартував. Пік Завейн",
-      color: "#00D166",
+      color: "#800000",
     },
   },
   {
@@ -310,7 +305,7 @@ const eventJson = [
     msg: {
       title: "Стародавній кошмар",
       desc: "Стародавній кошмар стартує через 5 хв. Пік Завейн",
-      color: "#00D166",
+      color: "#800000",
     },
   },
   {
@@ -318,7 +313,7 @@ const eventJson = [
     msg: {
       title: "Стародавній кошмар",
       desc: "Стародавній кошмар стартував. Пік Завейн",
-      color: "#00D166",
+      color: "#800000",
     },
   },
   {
@@ -326,7 +321,7 @@ const eventJson = [
     msg: {
       title: "Стародавній кошмар",
       desc: "Стародавній кошмар стартує через 5 хв. Пік Завейн",
-      color: "#00D166",
+      color: "#800000",
     },
   },
   {
@@ -334,7 +329,7 @@ const eventJson = [
     msg: {
       title: "Стародавній кошмар",
       desc: "Стародавній кошмар стартував. Пік Завейн",
-      color: "#00D166",
+      color: "#800000",
     },
   }
 ];
@@ -358,6 +353,33 @@ client.on("ready", async () => {
             `Sending notification for event ${event.title} and cron ${event?.cron}`
           );
           channel.send({ content: "Нагадування", embeds: [embed] });
+        }
+      },
+      {
+        scheduled: true,
+        timezone: "Europe/Paris",
+      }
+    );
+  }
+  console.log("Scheduled all events");
+  
+  let channel1 = client.channels.cache.get(`1023611061229862953`);
+
+  for (const event of eventJson) {
+    console.log(`Scheduling for event ${event?.msg?.title}`);
+    cron.schedule(
+      event.cron,
+      () => {
+        if (channel1) {
+          const embed = new MessageEmbed()
+            .setColor(event?.msg?.color || "#FF0000")
+            .setTitle(event?.msg?.title || "Default Title")
+            .setTimestamp()
+            .setDescription(event?.msg?.desc || "Default Description");
+          console.log(
+            `Sending notification for event ${event.title} and cron ${event?.cron}`
+          );
+          channel1.send({ content: "Нагадування", embeds: [embed] });
         }
       },
       {
